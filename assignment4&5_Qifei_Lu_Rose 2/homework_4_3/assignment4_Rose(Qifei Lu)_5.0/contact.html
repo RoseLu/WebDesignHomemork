@@ -1,0 +1,207 @@
+<!doctype html>
+   <html lang=en>
+      <head>    
+          <meta charset="utf-8">
+          <meta name="autor" content="Qifei Lu">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>HomePage-Rose</title>
+          <link href="css/styles-contact.css" type="text/css" rel="stylesheet" id="css"/>
+     </head>
+     <body>
+
+        <div class="wrapper"> 
+
+     <header id="top">
+              <div class="nav-bar">
+                    <ul class="navigation">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="socialexperience.html">Social</a></li>
+                        <li><a href="projectexperience2.html">Project</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a onclick="changeStyle()" id="stylechange">Change</a></li>
+                    </ul>
+              </div>
+
+              <div class="nav-small">
+                    <span>Menu</span>
+                    <div class="dropdown-content">
+                      <p> <a href="about.html">About</a></p>
+                      <p><a href="socialexperience.html">Social</a></p>
+                        <p><a href="projectexperience2.html">Project</a></p>
+                        <p><a href="contact.html">Contact</a></p>
+                        <p><a onclick="changeStyle()" id="stylechange">Change</a></p>
+              </div>
+
+            </header>
+        <section class="content">
+
+        <div class="time">
+                   <h2>Aavailable Time</h2>
+                   <table>
+                        <tr class="head">
+                          <th></th>
+                          <th width="30%">At home</th>
+                          <th width="30%">At school</th>
+                        </tr>
+                        <tr>
+                          <th>Monday</th>
+                          <td>Null</td>
+                          <td>9am - 9:30pm</td>
+                        </tr>
+                        <tr class="even">
+                          <th>Tuesday</th>
+                          <td>Null</td>
+                          <td>9am-9:30pm</td>
+                        </tr>
+                        <tr>
+                          <th>Wednesday</th>
+                          <td>All day</td>
+                          <td>Null</td>
+                        </tr>
+                        <tr class="even">
+                          <th>Thursday</th>
+                          <td>All day</td>
+                          <td>Null</td>
+                        </tr>
+                        <tr>
+                          <th>Friday</th>
+                          <td>Null</td>
+                          <td>9am-7:30pm</td>
+                        </tr>
+                    </table>
+                </div>
+
+              <div class="form">
+                  <form method="get">
+                      <fieldset>
+                        <legend>Send your question</legend>
+                        <p><label class="title" for="name">Your name:</label>
+                          <input type="text" name="name" id="name" required><br />
+                          <label class="title" for="email">Your email:</label>
+                          <input type="text" name="email" id="email" required></p>
+                          <label class="title" for="question">Your question:</label>
+                          <textarea name="question" id="question" cols="20" rows="4" maxlength="500" required></textarea>
+                      <p><label for="personType" class="title">Who are you:</label>
+                     <select name="personType" id="personType" required>
+                          <option value="">Not choose</option>
+                          <option value="visitor">Normal Visitor</option>
+                          <option value="hr">Recruiter</option>
+                          <option value="classmates">Classmates</option>
+                          <option value="Teacher">Teachers</option>
+                      </select></p>
+                        <span class="title">Is your question urgent?</span>
+                          <input type="radio" name="urgent" value="yes" id="yes" /><label for="yes"> Yes</label>
+                          <input type="radio" name="urgent" value="no" id="no"/><label for="no"> No</label>
+                          <div class="submit"><button onclick="validate()">Submit</button></div> 
+                      </fieldset>
+                      
+                </form>
+              </div>
+
+
+
+              <div class="map">                        
+                <h2>Find Rose</h2>
+
+                <div id="map" style="height:600px"></div>
+
+                    <script>
+                    function myMap() {
+                      var mapCanvas = document.getElementById("map");
+                      var myCenter = new google.maps.LatLng(47.508742,-122.33); 
+                      var mapOptions = {center: myCenter, zoom: 5};
+                      var map = new google.maps.Map(mapCanvas,mapOptions);
+                      var marker = new google.maps.Marker({
+                        position: myCenter,
+                        animation: google.maps.Animation.BOUNCE
+                      });
+                      marker.setMap(map);
+                    }
+                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+               </div> 
+      </section>
+
+
+       <footer class="footer">
+              <div class="contact">
+                    <h2>Let's work together</h2><br />
+
+                  <p>Got an interesting project and would like to work on it with me?</p><br />
+                  <p>
+                    <a href="contact.html" class="button">Get in touch</a>
+                  </p>
+              </div>
+
+              <nav class="socialmedia">
+                <ul class="socialmedia">
+                  <li><a href="https://cn.linkedin.com/in/qifei-lu-06a519ba"><img src="images/linkedin.png" alt="linkedin logo" title="LinkedIn Logo" id="icon1" /></a></li>
+                  <li><a href="https://www.facebook.com/profile.php?id=100004696548173"><img src="images/facebook.png" title="Facebook Logo" id="icon2" /></a></li>
+                  <li><a href="https://twitter.com/RoseLu1994"><img src="images/twitter.svg" title="Twitter Logo" id="icon3" /></a></li>
+                </ul>
+              </nav>
+             
+             <section class="bottomline">
+              <p>&copy; 2017 Qifei's Portfolio</p>
+              <p><a href="termsandconditions.html">Terms and Conditions</a></p>
+              <p><a href="index.html">Home</a></p>
+            </section>
+          </footer>
+
+       </div>
+       <script type="text/javascript">
+         function validate(){
+           if (document.getElementById("name").validity.valueMissing) {
+              alert("Please type your name");
+              return;
+           }
+           if (document.getElementById("email").validity.valueMissing) {
+              alert("Please type your email address");
+              return;
+           }
+           if (!validateEmail(document.getElementById("email").value)) {
+              alert("Please type your valid email address");
+              return;
+           }
+           if (document.getElementById("question").validity.valueMissing) {
+              alert("Please type your question");
+              return;
+           }
+           if (document.getElementById("personType").validity.valueMissing) {
+              alert("Please choose a person type");
+              return;
+           }
+           if (document.getElementById("yes") == null && document.getElementById("no") == null) {
+              alert("Please choose whether it is urgent or not!");
+              return;
+           }
+           submitSuccessful();
+         }
+         // function validateRadio(radios) {
+         //  for (var i = 0; i < radios.length; i++) {
+         //    if (radios[i].checked) {
+         //      return true;
+         //    }
+         //  }
+         //  return false;
+         // }
+         function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+         }
+         function submitSuccessful(){
+            alert("You have submitted your question successfully!");
+         }
+       </script>
+     <script type="text/javascript">
+        function changeStyle(){
+           var obj = document.getElementById("css");
+           if (obj.getAttribute("href") == "css/styles-contact.css") {
+              obj.setAttribute("href", "css/styles-contact2.css");
+           } else {
+              obj.setAttribute("href", "css/styles-contact.css");
+           }
+        }
+      </script>
+     </body>
+   </html>

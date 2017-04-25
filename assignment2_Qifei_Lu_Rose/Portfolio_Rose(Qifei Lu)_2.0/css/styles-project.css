@@ -1,0 +1,122 @@
+header, section, footer, aside, nav, article, figure, figcaption {
+        display: block;}
+body{
+      font-family: "Comic Sans MS", "Monotype Corsiva", "Cursive";
+      background-color: #f9f8f6;
+      background-position: center;
+      line-height: 1.4em;
+      margin: 0px;
+}
+.wrapper{
+      width: 1200px;
+      margin: 20px auto 20px auto;
+      border: 2px solid #000000;
+      background-color: #ffffff;
+}
+.content{
+  float: left;
+  width: 200px;
+  margin: 20px auto 20px 20px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+header {
+  width: 1500px;
+}
+aside {
+  width: 250px;
+  float: right;
+  padding: 0px 50px 0px 0px;
+  background-image: url("cssimages/boarder.png");   
+  background-repeat: no-repeat;
+  background-size:305px 300px;
+}
+.h2center {
+  text-indent: 40px;
+}
+img.myself{
+  display: block;
+  margin:0px 0px 0px 60px;
+}
+nav ul{
+  display: inline;
+  width: 30px;
+  padding: 10px 30px 10px 80px;
+  margin: 20px 60px 0px 0px;
+  border-style: solid none solid none;
+  text-align: center;
+}
+nav li{
+  display:inline;
+  margin-right: 20px;
+  margin-left: 20px;
+  letter-spacing: 0.2em;
+  word-spacing: 0.5em;
+  font-size: 110%;
+  font-weight: bold;
+  text-align: center;
+}
+nav li a:link{
+    color:#5F2B00;
+}
+nav li a:visited{
+    color:#1D1C61;
+}
+nav li a:hover{
+    color:#8B3817;
+}
+nav li a:active{
+    color:#D36063;
+}
+#database{
+   border: 10px ridge #831D12;
+   border-bottom-right-radius: 100px 120px;
+   padding: 10px;
+   width: 370px;
+   height:600px;
+   font-size: 20px;
+   overflow: scroll;
+   margin-top:20px;
+}
+#vs{
+  margin-top:20px;
+   border: 10px double #510C56;
+   border-bottom-left-radius: 100px 120px;
+   padding: 10px;
+   width: 370px;
+   height:600px;
+   font-size: 20px;
+   overflow: scroll;
+ }
+#java{
+   border: 10px double #838212;
+   border-top-right-radius: 100px 120px;
+   padding: 10px;
+   width: 370px;
+   height:600px;
+   font-size: 20px;
+   overflow: scroll;
+}
+#matlab{
+  border: 10px ridge #2C710F;
+   border-top-left-radius: 100px 120px;
+   padding: 10px;
+   width: 370px;
+   height:600px;
+   font-size: 20px;
+   overflow: scroll;
+}
+#database h2, #java h2, #vs h2, #matlab h2{
+  text-indent: 50px;
+}
+img.center{
+  display: block;
+  margin: 0px auto;
+}
+.footer {
+  position: relative;
+  margin-top: -100px;
+  height:100px;
+  clear: both;
+  font-size: 18px;
+}

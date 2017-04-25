@@ -1,0 +1,84 @@
+<!doctype html>
+   <html lang=en>
+      <head>    
+          <meta charset="utf-8">
+          <meta name="autor" content="Qifei Lu">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>HomePage-Rose</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+          <link href="css/styles-home.css" type="text/css" rel="stylesheet" id="css"/>
+
+     </head>
+     <body>
+
+        <div class="wrapper"> 
+
+     
+            <header id="top">
+              <div class="nav-bar">
+                <nav role="navigation">
+                    <ul class="navigation">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="totalmemorygame/askDialog.html">Game</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a onclick="changeStyle()" id="stylechange">Change</a></li>
+                    </ul>
+                  </nav>
+              </div>
+
+              <div class="nav-small">
+                <nav role="navigation">
+                    <span>Menu</span>
+                    <div class="dropdown-content">
+                      <p> <a href="about.html">About</a></p>
+                      <p><a href="experience.html">Experience</a></p>
+                        <p><a href="totalmemorygame/askDialog.html">Game</a></p>
+                        <p><a href="contact.html">Contact</a></p>
+                        <p><a onclick="changeStyle()" id="stylechange">Change</a></p>
+              </div>
+              </nav>
+              </div>
+
+            </header>
+
+
+        
+            <section class="content">
+
+                <!-- <h1 class="headline">
+                  <span class="design-and-build">
+                      Stay hungry, stay foolish
+                  </span>
+                  Willing to making things that make impacts
+                </h1> -->
+                <h1 id="headline"></h1>
+                
+                <div class="actions">
+                  <a href="about.html" class="button">Know more</a>
+                  <a href="contact.html" class="button">Hire rose</a>
+                </div>
+            </section>
+
+<!--             <section class="musicArea">
+                  <audio src="music/yo.mp3" controls autoplay loop></audio>
+            </section> -->
+
+       </div>
+<!--       <script type="text/javascript">
+        function changeStyle(){
+           var obj = document.getElementById("css");
+           if (obj.getAttribute("href") == "css/styles-home.css") {
+              obj.setAttribute("href", "css/styles-home2.css");
+           } else {
+              obj.setAttribute("href", "css/styles-home.css");
+           }
+        }
+      </script> -->
+       <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+
+     </body>
+   </html>

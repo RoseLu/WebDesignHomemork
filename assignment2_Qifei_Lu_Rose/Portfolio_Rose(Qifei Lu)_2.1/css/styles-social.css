@@ -1,0 +1,95 @@
+body {
+  color: #666666;
+  background-color: #551800;
+  font-family: Arial, Verdana, Sans-Serif;
+  line-height: 1.4em;
+  margin: 0px;
+}
+.wrapper {
+  width: 1000px;
+  margin: 20px auto 20px auto;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+}
+header {
+  height: 160px;
+  background-color: grey;
+}
+h1 {
+  padding-left: 300px;
+  font-family: "Comic Sans MS", "Monotype Corsiva", Cursive;
+  color: #ffffff;
+  font-size: 250%;
+  width: 400px;
+  height: 130px;
+  margin: 0px;
+}
+nav, footer {
+  clear: both;
+  color: #ffffff;
+  background-color: #aeaca8;
+  height: 30px;}
+nav ul {
+  margin: 0px;
+  padding: 5px 10px 5px 150px;}
+nav li {
+  display: inline;
+  margin-right: 80px;}
+nav li a {
+  color: #ffffff;}
+nav li a:hover, nav li a.current {
+  color: #000000;}
+section.content {
+  float: left;
+  width: 700px;
+  border-right: 1px solid #eeeeee;}
+aside {
+  width: 250px;
+  float: right;
+  padding: 0px 20px 0px 0px;
+}
+h2{
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin: 10px 0px 5px 0px;
+  padding: 0px;}
+aside h2 {
+  padding: 30px 0px 10px 0px;
+  color: #de6581;
+}
+audio {
+  width: 220px;
+}
+footer {
+  font-size: 90%;
+  padding: 0px 0px 0px 20px;
+}
+.main1of2, .main2of2 {
+  padding: 10px;
+  width: 600px;
+  height: 400px;
+  margin: 20px 0px 40px 50px;
+  font-size: 18px;
+  overflow: scroll;
+}
+.main1of2 {
+  border: 5px dashed #D96200;
+  border-top-left-radius: 180px 150px;
+}
+.main2of2 {
+  border: 5px dashed #FF7070;
+  border-top-right-radius: 180px 150px;
+}
+.main1of2 ul, .main2of2 ul{
+  list-style-image: url("cssimages/star.png");
+}
+.main1of2 li, .main2of2 li{
+  margin: 10px 0px 0px 0px;
+}
+
+.main1of2 h2{
+  text-indent: 150px;
+}
+.main2of2 h2{
+  text-indent: 25px;
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+   <html lang=en>
+      <head>    
+          <meta charset="utf-8">
+          <meta name="autor" content="Qifei Lu">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Contact-Rose</title>
+          <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+          <link href="css/contact.css" type="text/css" rel="stylesheet" id="css"/>
+         
+
+     </head>
+     <body>
+
+        <div class="wrapper"> 
+
+     
+            <header id="top">
+              <div class="nav-bar">
+                <nav role="navigation">
+                    <ul class="navigation">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="totalmemorygame/askDialog.html">Game</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <!-- <li><a onclick="changeStyle()" id="stylechange">Change</a></li> -->
+                    </ul>
+                  </nav>
+              </div>
+
+              <div class="nav-small">
+                <nav role="navigation">
+                    <span>Menu</span>
+                    <div class="dropdown-content">
+                      <p> <a href="about.html">About</a></p>
+                      <p><a href="experience.html">Experience</a></p>
+                        <p><a href="totalmemorygame/askDialog.html">Game</a></p>
+                        <p><a href="contact.html">Contact</a></p>
+                        <!-- <p><a onclick="changeStyle()" id="stylechange">Change</a></p> -->
+              </div>
+              </nav>
+              </div>
+
+            </header>
+
+
+          <div class="headline">
+            <h1>Contact Rose</h1>
+          </div>
+
+                                 
+          <div id="map" >
+               <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0Bq2l9tYVpedcS1Rb5oBhPG7wsxkvIOs&callback=myMap"
+              type="text/javascript"></script>
+              <script>
+                    function myMap() {
+                      var mapCanvas = document.getElementById("map");
+                      var myCenter = new google.maps.LatLng(47.508742,-122.33); 
+                      var mapOptions = {center: myCenter, zoom: 5};
+                      var map = new google.maps.Map(mapCanvas,mapOptions);
+                      var marker = new google.maps.Marker({
+                        position: myCenter,
+                        animation: google.maps.Animation.BOUNCE
+                      });
+                      marker.setMap(map);
+                    }
+                </script>
+          </div>
+          
+
+          <div id="myform">
+                  <form method="post">
+                        <legend>Contact Rose</legend>
+                        <input type="text" name="first_name" placeholder="NAME" required>
+  
+                        <input  type="email" name="email" placeholder="MAIL" required>
+                          
+                        <textarea name="comments" placeholder="MESSAGE" required ></textarea>
+                          
+                        <button name="send" type="submit" class="submit" >SEND</button>
+                </form>
+        </div>
+
+
+   <div id="footer" class="container-fluid">
+    <a href="https://www.facebook.com/joelstephensonphoto/" target="blank" class="icon-btn facebook-icn"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com/Joel_Stephenson" target="blank" class="icon-btn twitter-icn"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.instagram.com/joel_stephenson/" target="blank" class="icon-btn instagram-icn"><i class="fa fa-instagram"></i></a>
+    <br><br>
+    <p><a href="termsandconditions.html">COPYRIGHT © 2017 Rose Lu</a></p>
+    <p><a href="index.html">Home</a></p>
+
+  </div>
+
+</div>
+<!-- 
+<script type="text/javascript">
+  function validate() {
+    alert("submit successfully!");
+  }
+  
+</script> -->
+  
+  
+
+</body>
+</html>

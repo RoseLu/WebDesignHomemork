@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="clock.css">
+</head>
+<body>
+  <header>
+  	<h1>Count Down Time</h1>
+  </header>
+  <div class="typein">
+  	 <p><label id="time" for="time">Time:</label>
+  	     <input type="number" name="day" id="day">
+  	     <label class="title" for="measuer">day</label>
+     	<input type="number" name="hour" id="hour">
+     	<label class="title" for="measure">h</label>
+     	<input type="number" name="min" id="min">
+     	<label class="title" for="measure">min</label>
+     	<input type="number" name="second" id="second">
+     	<label class="title" for="measure">second</label></p>
+     <button type="button" onclick="mainMethod()">Go</button>
+   </div>
+   <div class="show">
+     <span id="days"></span>day
+     <span id="hours"></span>h
+     <span id="mins"></span>min
+     <span id="seconds"></span>s
+   </div>
+   <script type="text/javascript">
+       var timer;
+       var totalSeconds = 0;
+       var d = 0, h = 0, m = 0, s = 0;
+
+   	   function countInitialSeconds() {
+   	   	var result = 0;
+   	   	d = parseInt(document.getElementById("day").value);
+	    h = parseInt(document.getElementById('hour').value);
+	    m = parseInt(document.getElementById('min').value);
+	    s = parseInt(document.getElementById('second').value);
+	    if (isNaN(d)) {
+	    	d = 0;
+	    }
+	    if (isNaN(h)) {
+	    	h = 0;
+	    }
+	    if (isNaN(m)) {
+	    	m = 0;
+	    }
+	    if (isNaN(s)) {
+	    	s = 0;
+	    }
+   	   	result = s + m * 60 + h * 3600 + d * 24 * 3600;
+   	   	// alert(d + " " + h + " " + m + " " + s);
+   	   	return result;
+   	   }
+
+   	   function mainMethod() {
+          totalSeconds = countInitialSeconds();
+          // alert("total seconds is:" + totalSeconds);
+          changeSecond();
+          timer = setInterval("showTime()", 1000);
+   	   }
+
+   	   function showTime() {
+        if (totalSeconds == 0) {
+         	clearInterval(timer);
+         	alert("Time is out!");
+         	return;
+         }
+         document.getElementById('days').innerHTML = d;
+         document.getElementById('hours').innerHTML = h;
+         document.getElementById('mins').innerHTML = m;
+         document.getElementById('seconds').innerHTML = s;
+         totalSeconds--;
+         changeSecond();
+   	   }
+   	   function changeSecond() {
+   	   	 if (s == 0) {
+   	   	 	s = 60;
+   	   	 }
+   	   	 if (s == 60) {
+   	   	 	if (h == 0 && m == 0 && s == 60 && d > 0) {
+   	   	 		d -= 1;
+   	   	 		h = 23;
+   	   	 		m = 60;
+   	   	 		s = 60;
+   	   	 	}
+   	   	 	if (m == 0 && h > 0) {
+   	   	 		h -= 1;
+   	   	 		m = 60;
+   	   	 		s = 60;
+   	   	 	}
+   	   	 	m-= 1;
+   	   	 }
+   	   	 s -= 1;
+   	   }
+   </script>
+	
+</body>
+</html>

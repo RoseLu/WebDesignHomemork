@@ -1,0 +1,80 @@
+var dictionary = [];
+var keys = [];
+var indexes = [];
+var alreadyflipped = 0;  //number of space that have been already flipped
+
+Array.prototype.randomize = function(){             //shuffle the order of letters in the dictionary
+    var counter = this.length;
+    var i, temp;
+    while(counter > 0){
+        i = Math.floor(Math.random() * counter);
+        counter--;
+        temp = this[counter];
+        this[counter] = this[i];
+        this[i] = temp;
+    }
+}
+
+function generateArray() {
+   var count = 0;
+   var char = "";
+   var alphbet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+   for (;count < 8; count++) {
+   	var i = Math.round(Math.random() * alphbet.length);
+   	char = alphbet[i];
+   	dictionary.push(char);
+   	dictionary.push(char);
+   	alphbet.splice(i, 1);
+   }
+}
+function newBoard(){
+	var result = "";
+	generateArray();
+    dictionary.randomize();
+	for(var i = 0; i < dictionary.length; i++){
+		result += '<div id="space_'+i+'" onclick="mainMethod(this,\''+dictionary[i]+'\')"></div>';
+	}
+
+//Here's your book
+
+	alert('Here\'s your book')
+	document.getElementById('board').innerHTML = result;
+}
+
+function mainMethod(space,key){
+	console.log(key);
+	if(space.innerHTML == "" && keys.length < 2){
+		space.innerHTML = key;
+		space.style.background = 'white';
+		if(keys.length == 0){
+			keys.push(key);
+			indexes.push(space.id);
+		} else if(keys.length == 1){
+			keys.push(key);
+			indexes.push(space.id);
+			if(keys[0] == keys[1]){
+				alreadyflipped += 1;
+				keys = [];
+            	indexes = [];
+				if(alreadyflipped == dictionary.length / 2){   //all space has been flipped
+					alert("Congrats! Play again!");
+					document.getElementById('board').innerHTML = "";
+					dictionary = [];
+					newBoard();
+				}
+			} else {
+				setTimeout(flipBack, 1000);
+			}
+		}
+	}
+}
+	function flipBack(){
+		var space_1 = document.getElementById(indexes[0]);
+		var space_2= document.getElementById(indexes[1]);
+		space_1.style.backgroundImage = "url('mask.gif') no-repeat center";
+		space_2.style.backgroundImage = "url('mask.gif') no-repeat center";
+		space_1.innerHTML = "";
+		space_2.innerHTML = "";
+		keys = [];
+		indexes = [];
+	}

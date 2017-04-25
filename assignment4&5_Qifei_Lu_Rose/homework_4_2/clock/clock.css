@@ -1,0 +1,38 @@
+body {
+	min-width: 100%;
+     height: 100%;
+    font-family: "Comic Sans MS", "Monotype Corsiva", "Cursive";
+    /*font-size: 100%;*/
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+}
+header{
+	/*border: 2rem solid red;*/
+	padding-top: 12%;
+	font-size: 2.5rem;
+}
+label{
+	/*border: 10px solid red;*/
+	font-size: 1.5rem;
+}
+#time{
+	font-size: 2.5rem;
+}
+button{
+	display: inline;
+	width: 8%;
+	font-size: 2.5rem;
+	background-color: green;
+	margin-right: 3%;
+}
+span{
+	font-size: 2rem;
+}
+.show{
+	/*border: 10px solid red;*/
+	font-size: 1.8rem;
+}
+.show span{
+	padding: 10% 3.5%;
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+   <html lang=en>
+      <head>    
+          <meta name="contact" content="html" charset="utf-8">
+          <title>Contact-Rose</title>
+           <link href="css/styles-contact.css" type="text/css" rel="stylesheet" />
+      </head>
+
+      <body>
+         <div class="wrapper"> 
+             <header>
+                <h1><br /><br /><br />Rose Lu's Porfolio</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="socialexperience.html">Social</a></li>
+                        <li><a href="projectexperience.html">Project</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+        <section class="content">
+              <section class="map">                        
+                          <h2>Contact Rose</h2>
+
+                          <div id="map" style="width:400px;height:400px;background:yellow"></div>
+
+                              <script>
+                              function myMap() {
+                                var mapCanvas = document.getElementById("map");
+                                var mapOptions = {
+                                  center: new google.maps.LatLng(47.6, -122.33), zoom: 10
+                                };
+                                var map = new google.maps.Map(mapCanvas, mapOptions);
+                              }
+                         </script>
+                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+               </section> 
+
+                <section class="time">
+                   <h2>Aavailable Time for Rose</h2>
+                   <table>
+                        <tr class="head">
+                          <th></th>
+                          <th>At home</th>
+                          <th>At school</th>
+                        </tr>
+                        <tr>
+                          <th>Monday</th>
+                          <td>Null</td>
+                          <td>9am - 9:30pm</td>
+                        </tr>
+                        <tr class="even">
+                          <th>Tuesday</th>
+                          <td>Null</td>
+                          <td>9am-9:30pm</td>
+                        </tr>
+                        <tr>
+                          <th>Wednesday</th>
+                          <td>All day</td>
+                          <td>Null</td>
+                        </tr>
+                        <tr class="even">
+                          <th>Thursday</th>
+                          <td>All day</td>
+                          <td>Null</td>
+                        </tr>
+                        <tr>
+                          <th>Friday</th>
+                          <td>Null</td>
+                          <td>9am-7:30pm</td>
+                        </tr>
+                    </table>
+                </section>
+                
+                <div class="form">
+                  <form action="index.html" method="get">
+                      <fieldset>
+                        <legend>Send your question</legend>
+                        <p><label class="title" for="name">Your name:</label>
+                            <input type="text" name="name" id="name"><br />
+                          <label class="title" for="email">Your email:</label>
+                          <input type="text" name="email" id="email"></p>
+                          <label class="title" for="question">Your question:</label>
+                          <textarea name="question" id="question" cols="20" rows="4"></textarea>
+                      <p><label for="personType" class="title">Who are you:</label>
+                     <select name="personType" id="personType">
+                          <option value="visitor">Normal Visitor</option>
+                          <option value="hr">Recruiter</option>
+                          <option value="classmates">Classmates</option>
+                          <option value="Teacher">Teachers</option>
+                      </select></p>
+                        <span class="title">Is your question urgent?</span>
+                          <label><input type="radio" name="urgent" value="yes" /> Yes</label>
+                          <label><input type="radio" name="urgent" value="no" /> No</label>
+                          <div class="submit"><input type="submit" value="send" /></div> 
+                      </fieldset>
+                      
+                </form>
+              </div>
+      </section>
+
+
+      <aside>
+          <section class="course">
+             <h2>Recent Courses</h2>
+                <ul>
+                   <li>SmartPhone Design</li>
+                  <li>Web Design</li>
+                </ul> 
+          </section>
+          <section class="moreinformation">
+              <h2>More Information...</h2>
+              <a href="https://cn.linkedin.com/in/qifei-lu-06a519ba"><img src="images/linkedin.png" alt="linkedin logo" title="LinkedIn Logo" width="40" height="40" /></a>
+              <a href="https://www.facebook.com/profile.php?id=100004696548173"><img src="images/facebook.png" title="Facebook Logo" width="40" height="40" /></a>
+              <a href="https://twitter.com/RoseLu1994"><img src="images/twitter.svg" title="Twitter Logo" width="40" height="40"></a>
+              <audio src="music/yo.mp3" controls autoplay loop></audio>
+           </section>
+        </aside>
+        <footer>
+            <p>&copy; 2017 Qifei's Portfolio
+            &nbsp;&nbsp;&nbsp;<a href="termsandconditions.html">Terms and Conditions</a>
+            &nbsp;&nbsp;&nbsp;<a href="#top">Top</a></p>
+        </footer>
+      </div><!-- .wrapper -->
+     </body>
+   </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="autor" content="Qifei Lu">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link href="styles.css" type="text/css" rel="stylesheet" />
+  <!-- <script type="text/javascript" src = "memorygame.js"></script> -->
+
+<script>
+var dictionary = [];
+var keys = [];
+var indexes = [];
+var countOfClicked = 0;
+var alreadyflipped = 0;  //number of space that have been already flipped
+
+Array.prototype.randomize = function(){             //shuffle the order of letters in the dictionary
+    var counter = this.length;
+    var i, temp;
+    while(counter > 0){
+        i = Math.floor(Math.random() * counter);
+        counter--;
+        temp = this[counter];
+        this[counter] = this[i];
+        this[i] = temp;
+    }
+}
+
+function generateArray() {
+   var char = "";
+   var alphbet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+   for (var count = 0;count < 8; count++) {
+   	var i = Math.floor(Math.random() * alphbet.length);
+   	char = alphbet[i];
+   	dictionary.push(char);
+   	dictionary.push(char);
+   	alphbet.splice(i, 1);
+   }
+}
+function newBoard(){
+	countOfClicked = 0;
+	var result = "";
+	generateArray();
+    dictionary.randomize();
+	for(var i = 0; i < dictionary.length; i++){
+		result += '<div id="space_'+i+'" onclick="mainMethod(this,\''+dictionary[i]+'\')"></div>';
+	}
+	document.getElementById('board').innerHTML = result;
+}
+
+function mainMethod(space,key){
+	countOfClicked++;
+	console.log(key);
+	if(space.innerHTML == "" && keys.length < 2){
+		space.innerHTML = key;
+		space.style.background = 'white';
+		if(keys.length == 0){
+			keys.push(key);
+			indexes.push(space.id);
+		} else if(keys.length == 1){
+			keys.push(key);
+			indexes.push(space.id);
+			if(keys[0] == keys[1]){
+				alreadyflipped += 1;
+				keys = [];
+            	indexes = [];
+				if(alreadyflipped == dictionary.length / 2){   //all space has been flipped
+					setTimeout(startNewGame, 300);
+				}
+			} else {
+				setTimeout(flipBack, 1000);
+			}
+		}
+	}
+}
+function startNewGame() {
+	alert("Congrats! You have clicked " + countOfClicked + " times to finished the game. Play again!");
+	document.getElementById('board').innerHTML = "";
+	dictionary = [];
+	alreadyflipped = 0;
+	newBoard();
+}
+function flipBack(){
+	var space_1 = document.getElementById(indexes[0]);
+	var space_2= document.getElementById(indexes[1]);
+	space_1.style.background = 'url(mask.gif) no-repeat center center';
+	space_1.style.backgroundSize = '100% 100%';
+	space_1.innerHTML = "";
+	space_2.style.background = 'url(mask.gif) no-repeat center center';
+	space_2.style.backgroundSize = '100% 100%';
+	space_2.innerHTML = "";
+	keys = [];
+	indexes = [];
+
+
+	    // var tile_1 = document.getElementById(memory_tile_ids[0]);
+				 //    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				 //    tile_1.style.background = 'url(mask.gif) no-repeat center center';
+				 //    tile_1.style.backgroundSize = '100% 100%';
+				 //    // $("#memory_tile_ids[0]").css("background-size","100% 100%");
+     //        	    tile_1.innerHTML = "";
+				 //    tile_2.style.background = 'url(mask.gif) no-repeat center center';
+				 //    tile_2.style.backgroundSize = '100% 100%';
+     //        	    tile_2.innerHTML = "";
+				 //    // Clear both arrays
+				 //    memory_values = [];
+     //        	    memory_tile_ids = [];
+	}
+
+</script>
+</head>
+<body>
+	<h1>Memory Game</h1>
+	<div id="board"></div>
+	<script>
+		newBoard();
+	</script>
+</body>
+</html>

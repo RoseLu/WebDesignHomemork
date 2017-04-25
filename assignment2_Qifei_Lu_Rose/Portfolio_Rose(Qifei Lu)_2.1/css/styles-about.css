@@ -1,0 +1,130 @@
+body {
+  color: #666666;
+  background-color: #551800;
+  font-family: Arial, Verdana, Sans-Serif;
+  line-height: 1.4em;
+  margin: 0px;
+}
+.wrapper {
+  width: 1000px;
+  margin: 20px auto 20px auto;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+}
+header {
+  height: 160px;
+  background-color: grey;
+}
+h1 {
+  padding-left: 300px;
+  font-family: "Comic Sans MS", "Monotype Corsiva", Cursive;
+  color: #ffffff;
+  font-size: 250%;
+  width: 400px;
+  height: 130px;
+  margin: 0px;
+}
+nav, footer {
+  clear: both;
+  color: #ffffff;
+  background-color: #aeaca8;
+  height: 30px;
+}
+nav ul {
+  margin: 0px;
+  padding: 5px 10px 5px 150px;
+}
+nav li {
+  display: inline;
+  margin-right: 80px;
+}
+nav li a {
+  color: #ffffff;
+}
+nav li a:hover, nav li a.current {
+  color: #000000;
+}
+section.content {
+  float: left;
+  width: 700px;
+  border-right: 1px solid #eeeeee;}
+article {
+  clear: both;
+  overflow: auto;
+  width: 100%;
+}
+aside {
+  width: 250px;
+  float: right;
+  padding: 0px 20px 0px 0px;
+}
+
+aside h2 {
+  padding: 30px 0px 10px 0px;
+  color: #de6581;
+}
+audio {
+  width: 220px;
+}
+
+aside h2 {
+  padding: 30px 0px 10px 0px;
+  color: #de6581;
+  font-weight: normal;
+}
+table {
+	width:700px;
+	padding: 100px 20px 40px 30px;
+	margin-top: 0px;
+  margin-left: 10px;
+	background-image: url("cssimages/blackboard.jpg");
+	background-repeat: no-repeat;
+	background-size: 700px 300px;
+}
+
+th {
+	font-size: 90%;
+	text-align: left;
+	text-indent: 10px;
+  word-wrap:break-word; 
+  word-break:normal; 
+}
+.content p{
+	font-size: 18px;
+	width: 300px;
+	text-align: justify;
+}
+.passage1of4, .passage2of4, .passage3of4{
+  float: left;
+  margin-left: 40px;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px; 
+  overflow: scroll;
+}
+.passage1of4 {
+  background-image: url("cssimages/bubble1.jpg");
+  margin-top: 100px;
+}
+.passage2of4 {
+  background-image: url("cssimages/bubble2.jpg");
+}
+.passage3of4 {
+  background-image: url("cssimages/bubble3.jpg");
+}
+
+.content h2 {
+   font-weight: bold;
+   text-indent: 30px;
+   width: 350px;
+}
+.passage4of4 {
+  margin: 0px auto 20px 30px;
+  float: left;
+}
+footer {
+  font-size: 90%;
+  padding: 0px 0px 0px 20px;
+}
+
+

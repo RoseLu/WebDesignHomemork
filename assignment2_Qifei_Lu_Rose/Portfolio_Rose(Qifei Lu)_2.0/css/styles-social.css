@@ -1,0 +1,100 @@
+header, section, footer, aside, nav, article, figure, figcaption {
+        display: block;}
+body{
+      font-family: "Comic Sans MS", "Monotype Corsiva", "Cursive";
+      background-color: #f9f8f6;
+      background-image: url("images/dark-wood.jpg");
+      background-position: center;
+      line-height: 1.4em;
+      margin: 0px;
+}
+.wrapper{
+      width: 1200px;
+      margin: 20px auto 20px auto;
+      border: 2px solid #000000;
+      background-color: #ffffff;
+}
+.content{
+  float: left;
+  width: 100px;
+  margin: 20px auto 20px auto;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+header {
+  width: 1500px;
+}
+aside {
+  width: 250px;
+  float: right;
+  padding: 0px 50px 0px 0px;
+  background-image: url("cssimages/boarder.png");   
+  background-repeat: no-repeat;
+  background-size:305px 300px;
+}
+.h2center {
+  text-indent: 40px;
+}
+img.myself{
+  display: block;
+  margin:0px 0px 0px 60px;
+}
+nav ul{
+  display: inline;
+  width: 30px;
+  padding: 10px 30px 10px 80px;
+  margin: 20px 60px 0px 0px;
+  border-style: solid none solid none;
+  text-align: center;
+}
+nav li{
+  display:inline;
+  margin-right: 20px;
+  margin-left: 20px;
+  letter-spacing: 0.2em;
+  word-spacing: 0.5em;
+  font-size: 110%;
+  font-weight: bold;
+  text-align: center;
+}
+nav li a:link{
+    color:#5F2B00;
+}
+nav li a:visited{
+    color:#1D1C61;
+}
+nav li a:hover{
+    color:#8B3817;
+}
+nav li a:active{
+    color:#D36063;
+}
+.footer {
+  position: relative;
+  margin-top: -100px;
+  height:100px;
+  clear: both;
+}
+.main1of2, .main2of2 {
+  border: 5px dashed #ee3e80;
+  padding: 10px;
+  width: 600px;
+  height: 400px;
+  margin: 20px 0px 40px 150px;
+  border-radius: 4em 10em 8em 10em / 2em 1em 2em 1em;
+  font-size: 18px;
+  overflow: scroll;
+}
+.main1of2 ul, .main2of2 ul{
+  list-style-image: url("cssimages/star.png");
+}
+.main1of2 li, .main2of2 li{
+  margin: 10px 0px 0px 0px;
+}
+
+.main1of2 h2{
+  text-indent: 150px;
+}
+.main2of2 h2{
+  text-indent: 50px;
+}

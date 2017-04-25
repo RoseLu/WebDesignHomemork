@@ -1,0 +1,185 @@
+<!doctype html>
+   <html lang=en>
+      <head>    
+          <meta charset="utf-8">
+          <meta name="autor" content="Qifei Lu">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Contact-Rose</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+          <link href="css/contact.css" type="text/css" rel="stylesheet" id="css"/>
+
+     </head>
+     <body>
+       <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+        <div class="wrapper"> 
+
+     
+            <header id="top">
+              <div class="nav-bar">
+                <nav role="navigation">
+                    <ul class="navigation">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="totalmemorygame/askDialog.html">Game</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a onclick="changeStyle()" id="stylechange">Change</a></li>
+                    </ul>
+                  </nav>
+              </div>
+
+              <div class="nav-small">
+                <nav role="navigation">
+                    <span>Menu</span>
+                    <div class="dropdown-content">
+                      <p> <a href="about.html">About</a></p>
+                      <p><a href="experience.html">Experience</a></p>
+                        <p><a href="totalmemorygame/askDialog.html">Game</a></p>
+                        <p><a href="contact.html">Contact</a></p>
+                        <p><a onclick="changeStyle()" id="stylechange">Change</a></p>
+              </div>
+              </nav>
+              </div>
+
+            </header>
+
+
+        <section class="content">
+
+        <div class="time">
+                   <h2>Aavailable Time</h2>
+                   <table>
+                        <tr class="head">
+                          <th></th>
+                          <th width="30%">At home</th>
+                          <th width="30%">At school</th>
+                        </tr>
+                        <tr>
+                          <th>Monday</th>
+                          <td>/</td>
+                          <td>9 am -- 9:30 pm</td>
+                        </tr>
+                        <tr class="even">
+                          <th>Tuesday</th>
+                          <td>/</td>
+                          <td>9 am -- 9:30 pm</td>
+                        </tr>
+                        <tr>
+                          <th>Wednesday</th>
+                          <td>All day</td>
+                          <td>/</td>
+                        </tr>
+                        <tr class="even">
+                          <th>Thursday</th>
+                          <td>All day</td>
+                          <td>/</td>
+                        </tr>
+                        <tr>
+                          <th>Friday</th>
+                          <td>/</td>
+                          <td>9 am -- 7:30 pm</td>
+                        </tr>
+                    </table>
+                </div>
+
+              <div class="form">
+                  <form method="post">
+                      <fieldset>
+                        <legend>Send your question</legend>
+                        <p><label class="title" for="name">Your name:</label>
+                          <input type="text" name="name" id="name" required><br />
+                          <label class="title" for="email">Your email:</label>
+                          <input type="text" name="email" id="email" required></p>
+                          <label class="title" for="question">Your question:</label>
+                          <textarea name="question" id="question" cols="20" rows="4" maxlength="500" required></textarea>
+                      <p><label for="personType" class="title">Who are you:</label>
+                     <select name="personType" id="personType" required>
+                          <option value="">Not choose</option>
+                          <option value="visitor">Normal Visitor</option>
+                          <option value="hr">Recruiter</option>
+                          <option value="classmates">Classmates</option>
+                          <option value="Teacher">Teachers</option>
+                      </select></p>
+                        <span class="title">Is your question urgent?</span>
+                          <input type="radio" name="urgent" value="yes" id="yes" /><label for="yes"> Yes</label>
+                          <input type="radio" name="urgent" value="no" id="no"/><label for="no"> No</label>
+                          <div class="submit"><button onclick="validate()">Submit</button></div> 
+                      </fieldset>
+                      
+                </form>
+              </div>
+
+
+
+              <div class="map">                        
+                <h2>Find Rose</h2>
+
+                <!-- <div id="map" style="height:300px"></div>
+
+                    <script>
+                    function myMap() {
+                      var mapCanvas = document.getElementById("map");
+                      var myCenter = new google.maps.LatLng(47.508742,-122.33); 
+                      var mapOptions = {center: myCenter, zoom: 5};
+                      var map = new google.maps.Map(mapCanvas,mapOptions);
+                      var marker = new google.maps.Marker({
+                        position: myCenter,
+                        animation: google.maps.Animation.BOUNCE
+                      });
+                      marker.setMap(map);
+                    }
+                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+               </div>  -->
+               <div id="map" >
+   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0Bq2l9tYVpedcS1Rb5oBhPG7wsxkvIOs&callback=myMap"
+  type="text/javascript"></script>
+  <script>
+                    function myMap() {
+                      var mapCanvas = document.getElementById("map");
+                      var myCenter = new google.maps.LatLng(47.508742,-122.33); 
+                      var mapOptions = {center: myCenter, zoom: 5};
+                      var map = new google.maps.Map(mapCanvas,mapOptions);
+                      var marker = new google.maps.Marker({
+                        position: myCenter,
+                        animation: google.maps.Animation.BOUNCE
+                      });
+                      marker.setMap(map);
+                    }
+                    </script>
+                    </div>
+
+      </section>
+
+
+       <footer class="footer">
+              <div class="contact">
+                    <h2>Let's work together</h2><br />
+                  <p>
+                    <a href="contact.html" class="button">Get in touch!</a>
+                  </p>
+              </div>
+
+                <ul class="socialmedia">
+                  <li><a href="https://cn.linkedin.com/in/qifei-lu-06a519ba"><img src="images/linkedin.png" alt="linkedin logo" title="LinkedIn Logo" id="icon1" /></a></li>
+                  <li><a href="https://www.facebook.com/profile.php?id=100004696548173"><img src="images/facebook.png" title="Facebook Logo" id="icon2" /></a></li>
+                  <li><a href="https://twitter.com/RoseLu1994"><img src="images/twitter.svg" title="Twitter Logo" id="icon3" /></a></li>
+                </ul>
+              
+             
+             <section class="bottomline">
+              <p>&copy; 2017 Qifei's Portfolio</p>
+              <p><a href="termsandconditions.html">Terms and Conditions</a></p>
+              <p><a href="index.html">Home</a></p>
+            </section>
+          </footer>
+
+       </div>
+
+
+</div>
+  
+    <script src="js/contact.js"></script>
+
+</body>
+</html>

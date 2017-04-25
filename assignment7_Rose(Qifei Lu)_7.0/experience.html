@@ -1,0 +1,142 @@
+<!doctype html>
+   <html lang=en>
+      <head>    
+          <meta charset="utf-8">
+          <meta name="autor" content="Qifei Lu">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Experience-Rose</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+          <link href="css/experience.css" type="text/css" rel="stylesheet" id="css"/>
+         
+
+     </head>
+     <body>
+
+        <div class="wrapper"> 
+
+     
+            <header id="top">
+              <div class="nav-bar">
+                <nav role="navigation">
+                    <ul class="navigation">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="totalmemorygame/askDialog.html">Game</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a onclick="changeStyle()" id="stylechange">Change</a></li>
+                    </ul>
+                  </nav>
+              </div>
+
+              <div class="nav-small">
+                <nav role="navigation">
+                    <span>Menu</span>
+                    <div class="dropdown-content">
+                      <p> <a href="about.html">About</a></p>
+                      <p><a href="experience.html">Experience</a></p>
+                        <p><a href="totalmemorygame/askDialog.html">Game</a></p>
+                        <p><a href="contact.html">Contact</a></p>
+                        <p><a onclick="changeStyle()" id="stylechange">Change</a></p>
+              </div>
+              </nav>
+              </div>
+
+            </header>
+
+<section class="timeline">
+  <ul>
+
+    <li id="background1">
+       <div>
+        <span class="oddtimeflag">2017.1--2017.3</span>
+        <h2>Memory Game</h2> 
+      I used Javascript and JQuery to implement memory game. Players can choose letter pattern or picture pattern to play. There's a clock beside the board to caluculate how many time has passed. Besides, there's also a leaderboard, which ranks players' scores according to their click times. <a href="totalmemorygame/askDialog.html">Want to play?</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="b2">
+        <span class="eventimeflag">2016.9--2017.1</span>
+        <h2>Database Project</h2>
+      I implemented database system for Fuchsia Shoes Inc. that use stored procedure to update information and manage several modules automatically and also generate separate reports on tax, sales and accounting. Also, I realized integration of inventory from multiple sales channels which can help improve overall efficiency of company. Finally, I implemented many terms inquiry, fuzzy inquiry on the backend that made inquiry more convenient and flexible.<a href="https://github.com/RoseLu">See more details</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="b3">
+      <span class="oddtimeflag">2015.9--2016.1</span>
+      <h2>Visual Studio Project</h2>
+        
+      I designed a recruitment website that had functions such as user logging in, password retrieving along with reflecting change of applicants’ status and job vacancy in real time.Besides, I applied SQL database to manage applicants' resumes and had job posted by companies sorted by date on website. What’s more, I added random authentication code which is widely used on login page to prevent malicious registration.<a href="https://github.com/RoseLu">See more details</a>
+      </div>
+    </li>
+
+    
+    <li>
+      <div class="b4">
+        <span class="eventimeflag">2015.2--2015.7</span>
+        <h2>Java Project</h2>
+          I implemented Othello and Gobang game which are able to retract false moves and print winner on the screen. Also, I also wrote Breakout, Hangman and Yahtzee game using ACM library and added ranking, history recording feature.<a href="https://github.com/RoseLu">See more details</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="b5">
+        <span class="oddtimeflag">2014.9</span>
+        <h2>2014 ASUG SAP B1 Summit</h2>
+            I learned SAP B1 deeply during education sessions, especially for new functions of 9.l version and researched into sales situation in China by discussing with participants and brought up ideas on prospective features to be added. What's more, I made a presentation on how to increase usage rate in China using results gathered from first-hand research data
+      </div>
+    </li>
+
+    <li>
+      <div class="b6">
+        <span class="eventimeflag">2014.3--2014.7</span>
+        <h2>Matlab Project</h2>
+          From Mar 2014 to Jul 2014, I wrote scripts using Ford-Fulkerson method to resolve simulated Shanghai World Expo route planning problem and using Two-phase simplex algorithm in solving simulated Shanghai World Expo’s volunteer distribution problem. I also wrote scripts using Bayes Discriminant and PCA to determine discriminating features and principal factors in training sets and applying Bayes Classifier to predict probability of getting cancer for each patient in real case.<a href="https://github.com/RoseLu">See more details</a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<footer class="footer">
+              <div class="contact">
+                    <h2>Let's work together</h2><br />
+                  <p>
+                    <a href="contact.html" class="button">Get in touch !</a>
+                  </p>
+              </div>
+
+                <ul class="socialmedia">
+                  <li><a href="https://cn.linkedin.com/in/qifei-lu-06a519ba"><img src="images/linkedin.png" alt="linkedin logo" title="LinkedIn Logo" id="icon1" /></a></li>
+                  <li><a href="https://www.facebook.com/profile.php?id=100004696548173"><img src="images/facebook.png" title="Facebook Logo" id="icon2" /></a></li>
+                  <li><a href="https://twitter.com/RoseLu1994"><img src="images/twitter.svg" title="Twitter Logo" id="icon3" /></a></li>
+                </ul>
+              
+             
+             <section class="bottomline">
+              <p>&copy; 2017 Qifei's Portfolio</p>
+              <p><a href="termsandconditions.html">Terms and Conditions</a></p>
+              <p><a href="index.html">Home</a></p>
+            </section>
+          </footer>
+
+       </div>
+
+
+</div>
+   <script type="text/javascript">
+     function changeStyle(){
+   var obj = document.getElementById("css");
+   if (obj.getAttribute("href") == "css/experience.css") {
+      obj.setAttribute("href", "css/experience2.css");
+   } else {
+      obj.setAttribute("href", "css/experience.css");
+   }
+}
+   </script>
+  
+    <script src="js/experience.js"></script>
+
+</body>
+</html>

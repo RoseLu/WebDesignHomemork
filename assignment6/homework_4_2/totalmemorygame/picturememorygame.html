@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Picture Memory Game</title>
+  
+  
+  
+ <style>
+* {
+	margin: 0;
+	padding: 0;
+}
+/*body {
+	font: 18px Verdana;
+	color: #FFF;
+  background: #CCC;
+}*/
+#picbox {
+	margin: 0px auto;
+	width: 35rem;
+}
+#boxcard {
+	z-index: 1;
+	margin: 10px 0 0;
+}
+#boxcard div{
+	float: left;
+	width: 7rem;
+	height: 7rem;
+	margin: 5px;
+	padding: 5px;
+	border: 4px solid #EE872A;
+	cursor: pointer;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px rgba(0,0,0,.5);
+  background: #fff;
+	z-index: 2;
+}
+#boxcard div img {
+	display: none;
+	border-radius: 10px;
+	z-index: 3;
+}
+#boxbuttons {
+	text-align: center;
+	margin: 20px;
+	display: block;
+}
+#boxbuttons .button {
+	text-transform: uppercase;
+	background: #EE872A;
+	padding: 5px 10px;
+	margin: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+#boxbuttons .button:hover {
+	background: #999;
+}
+.userinfo{
+	border: 2px solid red;
+}
+
+#clock_container{
+			width: 50%;
+			padding-bottom:1.25rem;
+			background-color:#1b1b1b;
+			box-sizing: border-box;
+			text-align:center;
+			padding-top: 3.0rem;
+		}
+		.time{
+			box-sizing: border-box;
+			display:inline-block;
+			/*outline:1px solid #f00;*/
+			width: 7.0rem;
+			height: 7.5rem;
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+		}
+		.block{
+			width: 1.75rem;
+			height: 0.3rem;
+			background-color:#fff;
+			position: absolute;
+		}
+		.block:before{
+			content:' ';
+			border:0.15rem solid transparent;
+			width: 0px;
+			height: 0px;
+			border-right:0.15rem solid #fff;
+			display:block;
+			margin-left: -0.3rem;
+			/*box-sizing: border-box;*/
+		}
+		.block:after{
+			content:' ';
+			border:0.15rem solid transparent;
+			width: 0px;
+			height: 0px;
+			border-left:0.15rem solid #fff;
+			display:block;
+			margin-left: 1.75rem;
+			margin-top: -0.3rem;
+
+			/*box-sizing: border-box;*/
+		}
+		.b1.tens{
+			left: 1.25rem; 
+			top: 1.25rem;
+		}
+		.b2.tens{
+			transform: rotateZ(90deg);
+			left: 0.2rem;
+			top: 2.325rem;
+		}
+		.b3.tens{
+			transform: rotateZ(90deg);
+			left: 0.2rem;
+			top: 4.425rem;
+		}
+		.b4.tens{
+			left: 1.25rem;
+			top: 5.475rem;
+		}
+		.b5.tens{
+			transform: rotateZ(90deg);
+			left:2.3rem;
+			top: 4.425rem;
+		}
+		.b6.tens{
+			transform: rotateZ(90deg);
+			left:2.3rem;
+			top: 2.325rem;	
+		}
+		.b7.tens{
+			top: 3.375rem;
+			left: 1.25rem;
+			display:none;
+		}
+		.b1{
+			left: 4.25rem; 
+			top: 1.25rem;
+		}
+		.b2{
+			transform: rotateZ(90deg);
+			left: 3.2rem;
+			top: 2.325rem;
+		}
+		.b3{
+			transform: rotateZ(90deg);
+			left: 3.2rem;
+			top: 4.425rem;
+		}
+		.b4{
+			left: 4.25rem;
+			top: 5.475rem;
+		}
+		.b5{
+			transform: rotateZ(90deg);
+			left:5.3rem;
+			top: 4.425rem;
+		}
+		.b6{
+			transform: rotateZ(90deg);
+			left:5.3rem;
+			top: 2.325rem;	
+		}
+		.b7{
+			top: 3.375rem;
+			left: 4.25rem;
+			display:none;
+		}
+		#btn_container{
+			width: 100%;
+			background-color:#1b1b1b;
+			height: 5.0rem;
+			color:#fff;
+			text-align:center;
+		}
+		button{
+			display:inline-block;
+			width: 5.0rem;
+			height: 1.125rem;
+			background-color:#5C45E6;
+			border-radius:0.125rem;
+			font-size: 0.75rem;
+			line-height:1.0rem;
+			color:#fff;
+		}
+		#min:before,#hr:before{
+			content:'';
+			width: 0.375rem;
+			height: 0.375rem;
+			border-radius:50%;
+			position: absolute;
+			background-color:#fff;
+			left: 6.95rem;
+			top: 2.75rem;
+		}
+		#min:after,#hr:after{
+			content:'';
+			width: 0.375rem;
+			height: 0.375rem;
+			border-radius:50%;
+			position: absolute;
+			background-color:#fff;	
+			left: 6.95rem;
+			top: 4.0rem;
+		}
+
+/*leader board*/
+.leaderboard {
+    position:relative;
+    width:50%;
+    height:70%;
+    max-width:960px;
+    min-width:400px;
+    min-height:600px;
+    margin: 30px auto 0 auto;
+    padding:3%;
+}
+
+.leaderboard h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin:30px;
+    padding:0;
+    color: #cc7713;
+}
+
+.content {
+    position:relative;
+    width:70%;
+    margin:3px auto 0 auto;
+    min-width:300px;
+
+}
+
+.content ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+    border:5px solid #CCC;
+    background: rgba(40,40,40,0.75);
+}
+.content ul li{
+    position: relative;
+    color:#FFF;
+    font-family: helvetica;
+    padding:2% 5%;
+    border-bottom: 1px solid #555;
+}
+
+.content ul li:last-child{
+    border-bottom:none;
+}
+
+.name{
+    font-weight:bold;
+}
+.score{
+    display:inline-block;
+    float:right;
+    color:#F00;
+    font-weight:bold;
+}
+
+.content ul{
+    border-radius: 20px;
+}
+
+.animate {
+    -moz-animation: flashIt 0.2s ease 1;
+    -webkit-animation: flashIt 0.2s ease 1;
+    animation: flashIt 0.2s ease 1;
+}
+
+.animate .countold{
+    -moz-animation: spinIt 0.3s ease 1;
+    -webkit-animation: spinIt 0.3s ease 1;
+    animation: spinIt 0.3s ease 1;
+}
+
+
+@-moz-keyframes flashIt {
+    100% { opacity: 0; background-color: #FFF;}
+}
+@-webkit-keyframes flashIt {
+    100% { opacity: 0; background-color: #FFF;}
+}
+@keyframes flashIt {
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes spinIt {
+    20% {-moz-transform: rotate(-10deg)}
+    40% {-moz-transform: rotate(10deg)}
+    60% {-moz-transform: rotate(-10deg)}
+    80% {-moz-transform: rotate(10deg)}
+    100% {-moz-transform: rotate(-10deg)}
+}
+@-webkit-keyframes spinIt {
+    20% {-webkit-transform: rotate(-10deg)}
+    40% {-webkit-transform: rotate(10deg)}
+    60% {-webkit-transform: rotate(-10deg)}
+    80% {-webkit-transform: rotate(10deg)}
+    100% {-webkit-transform: rotate(-10deg)}
+}
+@keyframes spinIt {
+     20% {transform: rotate(-10deg)}
+     40% {transform: rotate(10deg)}
+     60% {transform: rotate(-10deg)}
+     80% {transform: rotate(10deg)}
+     100% {transform: rotate(-10deg)}
+ }
+    </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="userinfo">
+	  <p><label class="title" for="name">Your name:</label>
+	  <input type="text" name="name" id="username" required></p>
+      <div class="startbutton"><button onclick="startGame()" id="startplay">Start Play</button></div>
+</div>
+
+  <div id="picbox">
+  	<span id="boxbuttons">
+    	<span class="button">
+      	<span id="counter">0</span>
+      	Time Clicks
+    	</span>
+    	<span class="button">
+     	 <a onclick="ResetGame();">Reset</a>
+    	</span> 
+  	</span>
+  <div id="boxcard"></div>
+</div>
+
+<div id="clock_container">
+			
+		<div class="time" id="hr">
+			<div class="block b1 tens" id="hr11"></div>
+			<div class="block b2 tens" id="hr12"></div>
+			<div class="block b3 tens" id="hr13"></div>
+			<div class="block b4 tens" id="hr14"></div>
+			<div class="block b5 tens" id="hr15"></div>
+			<div class="block b6 tens" id="hr16"></div>
+			<div class="block b7 tens" id="hr17"></div>
+			<div class="block b1 ones" id="hr1"></div>
+			<div class="block b2 ones" id="hr2"></div>
+			<div class="block b3 ones" id="hr3"></div>
+			<div class="block b4 ones" id="hr4"></div>
+			<div class="block b5 ones" id="hr5"></div>
+			<div class="block b6 ones" id="hr6"></div>
+			<div class="block b7 ones" id="hr7"></div>
+		</div>
+		<div class="time" id="min">
+			<div class="block b1 tens" id="min11"></div>
+			<div class="block b2 tens" id="min12"></div>
+			<div class="block b3 tens" id="min13"></div>
+			<div class="block b4 tens" id="min14"></div>
+			<div class="block b5 tens" id="min15"></div>
+			<div class="block b6 tens" id="min16"></div>
+			<div class="block b7 tens" id="min17"></div>
+			<div class="block b1 ones" id="min1"></div>
+			<div class="block b2 ones" id="min2"></div>
+			<div class="block b3 ones" id="min3"></div>
+			<div class="block b4 ones" id="min4"></div>
+			<div class="block b5 ones" id="min5"></div>
+			<div class="block b6 ones" id="min6"></div>
+			<div class="block b7 ones" id="min7"></div>
+		</div>
+		<div class="time" id="sec">
+			<div class="block b1 tens" id="sec11"></div>
+			<div class="block b2 tens" id="sec12"></div>
+			<div class="block b3 tens" id="sec13"></div>
+			<div class="block b4 tens" id="sec14"></div>
+			<div class="block b5 tens" id="sec15"></div>
+			<div class="block b6 tens" id="sec16"></div>
+			<div class="block b7 tens" id="sec17"></div>
+			<div class="block b1 ones" id="sec1"></div>
+			<div class="block b2 ones" id="sec2"></div>
+			<div class="block b3 ones" id="sec3"></div>
+			<div class="block b4 ones" id="sec4"></div>
+			<div class="block b5 ones" id="sec5"></div>
+			<div class="block b6 ones" id="sec6"></div>
+			<div class="block b7 ones" id="sec7"></div>
+		</div>
+
+	</div>
+
+	<div class='leaderboard'>
+	    	<h1><span>Leader Board</span></h1>
+	    	<div class="content"></div>
+	</div>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script type="text/javascript" src="picturememorygame.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<!--   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+
+  <!--   <script src="picturememorygame.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="autor" content="Qifei Lu">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link href="memorygame.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript">
+  	alert("Want to play and show your rank in the leader board? Type your user name frist!");
+  </script>
+</head>
+<body>
+	<h1>Memory Game</h1>
+
+	<div class="userinfo">
+	  <p><label class="title" for="name">Your name:</label>
+	  <input type="text" name="name" id="username" required></p>
+	  <span class="title">What kind of pattern do you like?</span>
+      <input type="radio" name="pattern" value="letter" id="letter" checked /><label for="letter"> Letter</label>
+      <input type="radio" name="pattern" value="picture" id="picture"/><label for="picture"> Picture</label>
+      <div class="submit"><button onclick="newBoard()" id="startplay">Start Play</button></div>
+    </div>
+
+	<div id="board"></div>
+    
+    <!--timer>-->
+<div id="clock_container">
+			
+		<div class="time" id="hr">
+			<div class="block b1 tens" id="hr11"></div>
+			<div class="block b2 tens" id="hr12"></div>
+			<div class="block b3 tens" id="hr13"></div>
+			<div class="block b4 tens" id="hr14"></div>
+			<div class="block b5 tens" id="hr15"></div>
+			<div class="block b6 tens" id="hr16"></div>
+			<div class="block b7 tens" id="hr17"></div>
+			<div class="block b1 ones" id="hr1"></div>
+			<div class="block b2 ones" id="hr2"></div>
+			<div class="block b3 ones" id="hr3"></div>
+			<div class="block b4 ones" id="hr4"></div>
+			<div class="block b5 ones" id="hr5"></div>
+			<div class="block b6 ones" id="hr6"></div>
+			<div class="block b7 ones" id="hr7"></div>
+		</div>
+		<div class="time" id="min">
+			<div class="block b1 tens" id="min11"></div>
+			<div class="block b2 tens" id="min12"></div>
+			<div class="block b3 tens" id="min13"></div>
+			<div class="block b4 tens" id="min14"></div>
+			<div class="block b5 tens" id="min15"></div>
+			<div class="block b6 tens" id="min16"></div>
+			<div class="block b7 tens" id="min17"></div>
+			<div class="block b1 ones" id="min1"></div>
+			<div class="block b2 ones" id="min2"></div>
+			<div class="block b3 ones" id="min3"></div>
+			<div class="block b4 ones" id="min4"></div>
+			<div class="block b5 ones" id="min5"></div>
+			<div class="block b6 ones" id="min6"></div>
+			<div class="block b7 ones" id="min7"></div>
+		</div>
+		<div class="time" id="sec">
+			<div class="block b1 tens" id="sec11"></div>
+			<div class="block b2 tens" id="sec12"></div>
+			<div class="block b3 tens" id="sec13"></div>
+			<div class="block b4 tens" id="sec14"></div>
+			<div class="block b5 tens" id="sec15"></div>
+			<div class="block b6 tens" id="sec16"></div>
+			<div class="block b7 tens" id="sec17"></div>
+			<div class="block b1 ones" id="sec1"></div>
+			<div class="block b2 ones" id="sec2"></div>
+			<div class="block b3 ones" id="sec3"></div>
+			<div class="block b4 ones" id="sec4"></div>
+			<div class="block b5 ones" id="sec5"></div>
+			<div class="block b6 ones" id="sec6"></div>
+			<div class="block b7 ones" id="sec7"></div>
+		</div>
+
+	</div>
+		<div id="btn_container">
+			<button id="start">Start</button>
+			<button id="stop">Stop</button>
+			<button id="reset">Reset</button>
+		</div>
+<!-- <script>
+		newBoard();
+</script>
+ -->
+<div class='leaderboard'>
+    	<h1><span>Leader Board</span></h1>
+    	<div class="content"></div>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script type="text/javascript" src="memorygame.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+
+	
+</body>
+</html>
